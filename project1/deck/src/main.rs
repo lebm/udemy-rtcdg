@@ -21,9 +21,11 @@ impl Deck {
             }
         }
 
-        let deck = Deck { cards };
+        //let deck = Deck { cards };
         // "return deck;" is valid, but being an expression base language, a line with the value at the end is enough
-        deck
+        //deck
+        // Return the type constructor with the value is even better!
+        Deck { cards }
     }
 
     // shuffle is a method. Its first paramenter is a value of the type. It operates on a instance.
