@@ -6,8 +6,19 @@ struct Deck {
 }
 
 fn main() {
-    //let deck = Deck{ cards: vec![] };
-    let deck = Deck { cards: Vec::new() };
+    let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
+    let values = ["2", "3", "4"];
+    //let deck = Deck { cards: Vec::new() };
+    let deck = Deck { cards: vec![] };
+
+    let cards = vec![];
+    for suit in suits {
+        for value in values {
+            let card = format!("{value} of {suit}");
+            cards.push(card);
+        }
+    }
+
     //println!("Heres your deck: {}", deck);
     println!("Heres your deck: {deck:?}");
 }
