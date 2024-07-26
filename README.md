@@ -1,1 +1,2 @@
-# https://www.udemy.com/course/rust-the-complete-developers-guide/
+# My files from Rust: The Complete Developer's Guide  
+> https://www.udemy.com/course/rust-the-complete-developers-guide/  
