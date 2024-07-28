@@ -1,6 +1,6 @@
-#[allow(dead_code)]
-#[derive(Debug)]
+use rand::{seq::SliceRandom, thread_rng};
 
+#[derive(Debug)]
 struct Deck {
     cards: Vec<String>,
 }
@@ -31,11 +31,15 @@ impl Deck {
     // shuffle is a method. Its first paramenter is a value of the type. It operates on a instance.
     // Its is associated with an instance.
     fn shuffle(&mut self) {
-        ()
+        let mut rng = rand::thread_rng();
+        self.cards.shuffle(&mut rng);
     }
 }
 
 fn main() {
+    //The line below is valid, but is better to prefix the function with the module name when the function is external.
+    //let _rng = thread_rng();
+    let _rng = rand::thread_rng();
     let mut deck = Deck::new();
     println!("Heres your deck: {deck:#?}");
     //let deck = deck.shuffle();
