@@ -34,6 +34,14 @@ impl Deck {
         let mut rng = rand::thread_rng();
         self.cards.shuffle(&mut rng);
     }
+
+    fn deal(&mut self, num_cards: usize) -> Vec<String> {
+        // Removes from self.cards all items from "self.cards.len() - num_cards" position en returns.
+        // split_off comes from std library methods to work with Vec
+        // https://doc.rust-lang.org/std/index.html
+        // std lib has lots of useful functions.
+        self.cards.split_off(self.cards.len() - num_cards)
+    }
 }
 
 fn main() {
@@ -44,5 +52,9 @@ fn main() {
     println!("Heres your deck: {deck:#?}");
     //let deck = deck.shuffle();
     deck.shuffle();
+    println!("Heres your deck: {deck:#?}");
+    // Needs error handling!
+    let cards = deck.deal(100);
+    println!("Heres your hand: {cards:#?}");
     println!("Heres your deck: {deck:#?}");
 }
